@@ -7,19 +7,19 @@ function Find($array,$target)
 	
 	if($row == 0 || $col == 0) return false; //判断不满足条件的值false
 
-	if($target < $row || $target > $col) return false;  //判断不满足条件的值false
+	if($target < $array[0][0] || $target > $array[$row-1][$col-1]) return false;  //判断不满足条件的值false
 
 	$i = 0; //定义变量$i为0
 	$j = $col-1; //定义变量让列值-1
 
-	while ($target < $i || $j >0) //循环实现结果
+	while ($i < $row || $j >= 0) //循环实现结果
 	{
-		if($target > $array[$i][$j])
+		if($target < $array[$i][$j])
 		{
 			$j--; //自身减1
 		}
 
-		elseif ($target < $array[$i][$j])
+		elseif ($target > $array[$i][$j])
 		{
 			$i++; //自身+1
 		}
