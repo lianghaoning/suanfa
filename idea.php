@@ -1,4 +1,5 @@
 <?php
+//二分算法 折半查找
 
 class test
 {
